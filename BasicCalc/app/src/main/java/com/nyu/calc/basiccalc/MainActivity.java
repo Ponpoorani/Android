@@ -29,9 +29,18 @@ public class MainActivity extends ActionBarActivity {
 
         div.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v) {
-                int val1=Integer.parseInt(Number1.getText().toString())/Integer.parseInt(Number2.getText().toString());
-                Res.setText(Integer.toString(val1));
-                Toast.makeText(getApplicationContext(),"Division completed",Toast.LENGTH_SHORT).show();
+                if (Number1.getText().toString().trim().length() == 0) {
+                    Number1.requestFocus();
+                    Number1.setError("Value Missing");
+                } else if (Number2.getText().toString().trim().length() == 0) {
+                    Number2.requestFocus();
+                    Number2.setError("Value Missing");
+                    }
+                else {
+                    int val1 = Integer.parseInt(Number1.getText().toString()) / Integer.parseInt(Number2.getText().toString());
+                    Res.setText(Integer.toString(val1));
+                    Toast.makeText(getApplicationContext(), "Division completed", Toast.LENGTH_SHORT).show();
+                }
             }
         });
 
@@ -42,10 +51,28 @@ public class MainActivity extends ActionBarActivity {
 
         if (Number1.getText().toString().trim().length() == 0) {
             Number1.requestFocus();
-            Number1.setError("Value Missing");
+            AlertDialog alertDialog = new AlertDialog.Builder(this).create();
+            alertDialog.setTitle("BasicCalc");
+            alertDialog.setMessage("Value missing");
+            alertDialog.setButton("OK", new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int which) {
+                    // TODO Add code for the button here.
+                }
+            });
+
+            alertDialog.show();
         } else if (Number2.getText().toString().trim().length() == 0) {
             Number2.requestFocus();
-            Number2.setError("Value Missing");
+            AlertDialog alertDialog = new AlertDialog.Builder(this).create();
+            alertDialog.setTitle("BasicCalc");
+            alertDialog.setMessage("Value missing");
+            alertDialog.setButton("OK", new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int which) {
+                    // TODO Add code for the button here.
+                }
+            });
+
+            alertDialog.show();
         } else {
             int val = Integer.parseInt(Number1.getText().toString()) + Integer.parseInt(Number2.getText().toString());
             Res.setText(Integer.toString(val));
