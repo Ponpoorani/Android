@@ -1,5 +1,7 @@
 package com.nyu.calc.basiccalc;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.graphics.Color;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
@@ -37,9 +39,18 @@ public class MainActivity extends ActionBarActivity {
     }
     public void add(View view)
     {
-        int val=Integer.parseInt(Number1.getText().toString())+Integer.parseInt(Number2.getText().toString());
-        Res.setText(Integer.toString(val));
-        Toast.makeText(getApplicationContext(),"Addition completed",Toast.LENGTH_SHORT).show();
+
+        if (Number1.getText().toString().trim().length() == 0) {
+            Number1.requestFocus();
+            Number1.setError("Value Missing");
+        } else if (Number2.getText().toString().trim().length() == 0) {
+            Number2.requestFocus();
+            Number2.setError("Value Missing");
+        } else {
+            int val = Integer.parseInt(Number1.getText().toString()) + Integer.parseInt(Number2.getText().toString());
+            Res.setText(Integer.toString(val));
+            Toast.makeText(getApplicationContext(), "Addition completed", Toast.LENGTH_SHORT).show();
+        }
     }
 
 
