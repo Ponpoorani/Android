@@ -48,6 +48,7 @@
         android:layout_toEndOf="@+id/one" />
 
     <Button
+
         android:onClick="display"
         android:layout_width="@dimen/box_size"
         android:layout_height="@dimen/box_size"
@@ -61,8 +62,9 @@
         android:layout_alignStart="@+id/nine" />
 
     <Button
+        android:layout_marginLeft="100dp"
         android:onClick="display"
-        android:layout_width="@dimen/box_size"
+        android:layout_width="65dp"
         android:layout_height="@dimen/box_size"
         android:text="+"
         android:id="@+id/plus"
@@ -70,8 +72,8 @@
         android:textColor="#fffefffd"
         android:textStyle="bold"
         android:layout_above="@+id/four"
-        android:layout_alignRight="@+id/res"
-        android:layout_alignEnd="@+id/res" />
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
     <Button
         android:onClick="display"
@@ -79,7 +81,7 @@
         android:layout_height="@dimen/box_size"
         android:text="4"
         android:id="@+id/four"
-        android:layout_marginTop="35dp"
+        android:layout_marginTop="30dp"
         android:background="#ff46a0ff"
         android:textColor="#fffefffd"
         android:textStyle="bold"
@@ -115,7 +117,7 @@
 
     <Button
         android:onClick="display"
-        android:layout_width="@dimen/box_size"
+        android:layout_width="65dp"
         android:layout_height="@dimen/box_size"
         android:text="-"
         android:id="@+id/minus"
@@ -132,13 +134,13 @@
         android:layout_height="@dimen/box_size"
         android:text="7"
         android:id="@+id/seven"
-        android:layout_marginTop="44dp"
+        android:layout_marginTop="31dp"
         android:background="#ff46a0ff"
         android:textColor="#fffefffd"
         android:textStyle="bold"
         android:layout_below="@+id/four"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignLeft="@+id/four"
+        android:layout_alignStart="@+id/four" />
 
     <Button
         android:onClick="display"
@@ -168,7 +170,7 @@
 
     <Button
         android:onClick="display"
-        android:layout_width="@dimen/box_size"
+        android:layout_width="65dp"
         android:layout_height="@dimen/box_size"
         android:text="*"
         android:id="@+id/multiply"
@@ -193,16 +195,18 @@
         android:layout_toEndOf="@+id/two" />
 
     <Button
-        android:layout_width="@dimen/box_size"
+        android:onClick="display"
+        android:layout_width="65dp"
         android:layout_height="@dimen/box_size"
         android:text="/"
         android:id="@+id/div"
         android:background="#ff46a0ff"
         android:textColor="#fffefffd"
         android:textStyle="bold"
-        android:layout_alignTop="@+id/equal"
-        android:layout_alignLeft="@+id/multiply"
-        android:layout_alignStart="@+id/multiply" />
+        android:layout_alignBaseline="@+id/equal"
+        android:layout_alignBottom="@+id/equal"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
     <Button
         android:onClick="display"
@@ -213,10 +217,10 @@
         android:background="#ff46a0ff"
         android:textColor="#fffefffd"
         android:textStyle="bold"
-        android:layout_alignParentBottom="true"
+        android:layout_marginTop="25dp"
+        android:layout_below="@+id/seven"
         android:layout_alignLeft="@+id/seven"
-        android:layout_alignStart="@+id/seven"
-        android:layout_marginBottom="37dp" />
+        android:layout_alignStart="@+id/seven" />
 
     <Button
         android:onClick="display"
@@ -230,4 +234,19 @@
         android:layout_alignBottom="@+id/clr"
         android:layout_toRightOf="@+id/one"
         android:layout_toEndOf="@+id/one" />
+
+    <Button
+        android:onClick="delete"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/box_size"
+        android:text="DEL"
+        android:id="@+id/delete"
+        android:background="#ff46a0ff"
+        android:textColor="#fffefffd"
+        android:textStyle="bold"
+        android:layout_below="@+id/equal"
+        android:layout_alignLeft="@+id/clr"
+        android:layout_alignStart="@+id/clr"
+        android:layout_marginTop="51dp" />
+
 </RelativeLayout>
