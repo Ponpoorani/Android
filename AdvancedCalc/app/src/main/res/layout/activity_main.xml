@@ -9,20 +9,22 @@
     <EditText
         android:layout_width="fill_parent"
         android:layout_height="@dimen/box_size"
-        android:id="@+id/editText"
+        android:id="@+id/res"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:hint="Enter Value"
         android:gravity="right"
         android:ellipsize="end"
-        android:paddingTop="20dp"/>
+        android:paddingTop="20dp"
+        />
 
     <Button
         android:layout_width="@dimen/box_size"
         android:layout_height="@dimen/box_size"
         android:text="1"
         android:id="@+id/one"
-        android:layout_below="@+id/editText"
+        android:onClick="display"
+        android:layout_below="@+id/res"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_marginTop="45dp"
@@ -35,6 +37,7 @@
         android:layout_width="@dimen/box_size"
         android:layout_height="@dimen/box_size"
         android:text="2"
+        android:onClick="display"
         android:id="@+id/two"
         android:layout_marginRight="25dp"
         android:background="#ff46a0ff"
@@ -45,6 +48,7 @@
         android:layout_toEndOf="@+id/one" />
 
     <Button
+        android:onClick="display"
         android:layout_width="@dimen/box_size"
         android:layout_height="@dimen/box_size"
         android:text="3"
@@ -57,6 +61,7 @@
         android:layout_alignStart="@+id/nine" />
 
     <Button
+        android:onClick="display"
         android:layout_width="@dimen/box_size"
         android:layout_height="@dimen/box_size"
         android:text="+"
@@ -65,10 +70,11 @@
         android:textColor="#fffefffd"
         android:textStyle="bold"
         android:layout_above="@+id/four"
-        android:layout_alignRight="@+id/editText"
-        android:layout_alignEnd="@+id/editText" />
+        android:layout_alignRight="@+id/res"
+        android:layout_alignEnd="@+id/res" />
 
     <Button
+        android:onClick="display"
         android:layout_width="@dimen/box_size"
         android:layout_height="@dimen/box_size"
         android:text="4"
@@ -82,6 +88,7 @@
         android:layout_alignStart="@+id/one" />
 
     <Button
+        android:onClick="display"
         android:layout_width="@dimen/box_size"
         android:layout_height="@dimen/box_size"
         android:text="5"
@@ -94,6 +101,7 @@
         android:layout_toEndOf="@+id/one" />
 
     <Button
+        android:onClick="display"
         android:layout_width="@dimen/box_size"
         android:layout_height="@dimen/box_size"
         android:text="6"
@@ -106,6 +114,7 @@
         android:layout_alignStart="@+id/three" />
 
     <Button
+        android:onClick="display"
         android:layout_width="@dimen/box_size"
         android:layout_height="@dimen/box_size"
         android:text="-"
@@ -118,6 +127,7 @@
         android:layout_alignStart="@+id/plus" />
 
     <Button
+        android:onClick="display"
         android:layout_width="@dimen/box_size"
         android:layout_height="@dimen/box_size"
         android:text="7"
@@ -131,6 +141,7 @@
         android:layout_alignParentStart="true" />
 
     <Button
+        android:onClick="display"
         android:layout_width="@dimen/box_size"
         android:layout_height="@dimen/box_size"
         android:text="8"
@@ -143,6 +154,7 @@
         android:layout_toEndOf="@+id/one" />
 
     <Button
+        android:onClick="display"
         android:layout_width="@dimen/box_size"
         android:layout_height="@dimen/box_size"
         android:text="9"
@@ -155,6 +167,7 @@
         android:layout_toEndOf="@+id/two" />
 
     <Button
+        android:onClick="display"
         android:layout_width="@dimen/box_size"
         android:layout_height="@dimen/box_size"
         android:text="*"
@@ -167,30 +180,7 @@
         android:layout_alignStart="@+id/minus" />
 
     <Button
-        android:layout_width="@dimen/box_size"
-        android:layout_height="@dimen/box_size"
-        android:text="C"
-        android:id="@+id/clr"
-        android:background="#ff46a0ff"
-        android:textColor="#fffefffd"
-        android:textStyle="bold"
-        android:layout_alignParentBottom="true"
-        android:layout_alignLeft="@+id/seven"
-        android:layout_alignStart="@+id/seven" />
-
-    <Button
-        android:layout_width="@dimen/box_size"
-        android:layout_height="@dimen/box_size"
-        android:text="0"
-        android:id="@+id/clr"
-        android:background="#ff46a0ff"
-        android:textColor="#fffefffd"
-        android:textStyle="bold"
-        android:layout_alignParentBottom="true"
-        android:layout_toRightOf="@+id/one"
-        android:layout_toEndOf="@+id/one" />
-
-    <Button
+        android:onClick="display"
         android:layout_width="@dimen/box_size"
         android:layout_height="@dimen/box_size"
         android:text="="
@@ -198,9 +188,9 @@
         android:background="#ff46a0ff"
         android:textColor="#fffefffd"
         android:textStyle="bold"
-        android:layout_alignTop="@+id/clr"
-        android:layout_alignLeft="@+id/nine"
-        android:layout_alignStart="@+id/nine" />
+        android:layout_alignTop="@+id/zero"
+        android:layout_toRightOf="@+id/two"
+        android:layout_toEndOf="@+id/two" />
 
     <Button
         android:layout_width="@dimen/box_size"
@@ -213,4 +203,31 @@
         android:layout_alignTop="@+id/equal"
         android:layout_alignLeft="@+id/multiply"
         android:layout_alignStart="@+id/multiply" />
+
+    <Button
+        android:onClick="display"
+        android:layout_width="@dimen/box_size"
+        android:layout_height="@dimen/box_size"
+        android:text="C"
+        android:id="@+id/clr"
+        android:background="#ff46a0ff"
+        android:textColor="#fffefffd"
+        android:textStyle="bold"
+        android:layout_alignParentBottom="true"
+        android:layout_alignLeft="@+id/seven"
+        android:layout_alignStart="@+id/seven"
+        android:layout_marginBottom="37dp" />
+
+    <Button
+        android:onClick="display"
+        android:layout_width="@dimen/box_size"
+        android:layout_height="@dimen/box_size"
+        android:text="0"
+        android:id="@+id/zero"
+        android:background="#ff46a0ff"
+        android:textColor="#fffefffd"
+        android:textStyle="bold"
+        android:layout_alignBottom="@+id/clr"
+        android:layout_toRightOf="@+id/one"
+        android:layout_toEndOf="@+id/one" />
 </RelativeLayout>
